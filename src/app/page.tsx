@@ -101,7 +101,7 @@ export default function Page() {
             marginBottom: "1.6rem",
           }}
         >
-          The portfolio site is currently in production.
+          This portfolio site is under construction.
           <br />
           Please check back soon.
         </p>
