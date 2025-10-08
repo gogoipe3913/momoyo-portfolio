@@ -1,95 +1,127 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+/* eslint-disable @next/next/no-img-element */
+import type { Metadata } from "next";
+import Background from "./components/BackgroundCanvas"; // ← dynamic/ssr:false を使わず、通常インポート
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Momoyo Yamaguchi | Brand Director",
+  description:
+    "Brand Director / Creative Director based in Tokyo. Founder of andlphin.",
+  openGraph: {
+    title: "Momoyo Yamaguchi | Brand Director",
+    description:
+      "Brand Director / Creative Director based in Tokyo. Founder of andlphin.",
+    url: "https://your-domain.vercel.app/",
+    siteName: "Momoyo Yamaguchi Portfolio",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Momoyo Yamaguchi Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Momoyo Yamaguchi | Brand Director",
+    description:
+      "Brand Director / Creative Director based in Tokyo. Founder of andlphin.",
+  },
+  icons: { icon: "/favicon.ico" },
+};
+
+export default function Page() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="stack">
+      <div className="bg-layer" aria-hidden>
+        <Background />
+      </div>
 
-        <div className={styles.ctas}>
+      <div
+        style={{
+          textAlign: "center",
+          lineHeight: 1.7,
+          background: "rgba(255,255,255,0.42)",
+          backdropFilter: "saturate(140%) blur(5px)",
+          borderRadius: 16,
+          padding: "2.2rem",
+          boxShadow: "0 6px 35px rgba(0,0,0,0.08)",
+        }}
+        className="introduce-card"
+      >
+        <div>
+          <img
+            src="/logo.svg"
+            alt="Momoyo Yamaguchi – Brand Director"
+            className="logo"
+          />
+        </div>
+
+        <p
+          style={{
+            fontSize: "0.9rem",
+            color: "#616161",
+            marginBottom: "1.2rem",
+          }}
+        >
+          Brand Director / Creative Director based in Kyoto.
+          <br />
+          Founder of the fashion brand{" "}
+          <a href="https://www.instagram.com/andolphin.jp/">
+            <strong>andolphin</strong>.
+          </a>
+        </p>
+
+        <p
+          style={{
+            fontSize: "0.9rem",
+            color: "#616161",
+            marginBottom: "1.6rem",
+          }}
+        >
+          The portfolio site is currently in production.
+          <br />
+          Please check back soon.
+        </p>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "1.2rem",
+            fontSize: "0.9rem",
+          }}
+        >
           <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://www.instagram.com/peachworld.404/"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ textDecoration: "underline", color: "#616161" }}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            Instagram
           </a>
           <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
+            href="mailto:contact@momo.hitokuchi@gmail.com"
+            style={{ textDecoration: "underline", color: "#616161" }}
           >
-            Read our docs
+            Email
           </a>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </div>
+
+      <footer
+        style={{
+          position: "fixed",
+          bottom: "1.2rem",
+          fontSize: "0.8rem",
+          color: "#9aa",
+          letterSpacing: "0.05em",
+        }}
+      >
+        © {new Date().getFullYear()} Momoyo Yamaguchi
       </footer>
-    </div>
+    </main>
   );
 }
