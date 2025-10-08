@@ -5,11 +5,11 @@ import Background from "./components/BackgroundCanvas"; // ← dynamic/ssr:false
 export const metadata: Metadata = {
   title: "Momoyo Yamaguchi | Brand Director",
   description:
-    "Brand Director / Creative Director based in Tokyo. Founder of andlphin.",
+    "Brand Director / Creative Director based in Kyoto. Founder of andlphin.",
   openGraph: {
     title: "Momoyo Yamaguchi | Brand Director",
     description:
-      "Brand Director / Creative Director based in Tokyo. Founder of andlphin.",
+      "Brand Director / Creative Director based in Kyoto. Founder of andlphin.",
     url: "https://your-domain.vercel.app/",
     siteName: "Momoyo Yamaguchi Portfolio",
     locale: "en_US",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Momoyo Yamaguchi | Brand Director",
     description:
-      "Brand Director / Creative Director based in Tokyo. Founder of andlphin.",
+      "Brand Director / Creative Director based in Kyoto. Founder of andlphin.",
   },
   icons: {
     icon: [
