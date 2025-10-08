@@ -29,7 +29,19 @@ export const metadata: Metadata = {
     description:
       "Brand Director / Creative Director based in Tokyo. Founder of andlphin.",
   },
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: [
+      { url: "/favicons/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicons/favicon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      {
+        url: "/favicons/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 export default function Page() {
@@ -52,15 +64,23 @@ export default function Page() {
         className="introduce-card"
       >
         <div>
-          <img
-            src="/logo.svg"
-            alt="Momoyo Yamaguchi – Brand Director"
-            className="logo"
-          />
+          <picture>
+            <source
+              srcSet="/logo-sp.svg"
+              media="(max-width: 800px)"
+              type="image/svg+xml"
+            />
+            <img
+              src="/logo.svg"
+              alt="Momoyo Yamaguchi – Brand Director"
+              className="logo"
+            />
+          </picture>
         </div>
 
         <p
           style={{
+            marginTop: "1.4rem",
             fontSize: "0.9rem",
             color: "#616161",
             marginBottom: "1.2rem",
