@@ -138,6 +138,7 @@ export default function Page() {
           fontSize: "0.8rem",
           color: "#9aa",
           letterSpacing: "0.05em",
+          margin: "0 auto",
         }}
       >
         © {new Date().getFullYear()} Momoyo Yamaguchi
